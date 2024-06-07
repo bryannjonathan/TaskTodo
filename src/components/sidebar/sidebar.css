@@ -4,11 +4,17 @@
     background-color: #262626;
     display: flex;
     flex-direction: column;
-    height:100vh;
+    /* height:100%; */
+
+
+}
+
+#image img{
+    border-radius: 50%;
 }
 
 .profile {
-    margin: 1.5rem;
+    margin: 0.5rem;
     padding: 1rem 0.8rem;
     border-radius: 1rem;
     cursor: pointer;
@@ -16,13 +22,17 @@
     color: white;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
-h1 {
+#name h1 {
     font-size: 1.2rem;
     display: flex;
     flex-direction: column;
     line-height: 1.2rem;
+    margin: 1rem;
+    /* max-width: 5rem; */
+    /* margin-right: */
 }
 
 .nav-container {
@@ -57,4 +67,12 @@ h1 {
 
 .nav-item:hover {
     background-color: #202020;
+}
+
+#sign-out:hover{
+    color: #6783f5
+}
+
+#sign-out{
+    
 }

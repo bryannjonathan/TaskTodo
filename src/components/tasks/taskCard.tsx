@@ -63,7 +63,8 @@ function TaskCard({ task }: { task: taskProps }) {
             </div>
             <div className="task-actions">
                 {/* Edit and Delete Button */}
-                <Button onClick={handleEdit} text={<FaPen />} />
+                <Button onClick={handleEdit} text={<FaPen />} className="edit-button"/>
+                
                 <Form action={deleteTodo}>
                     <Input type="hidden" name="inputId" value={task.id}></Input>
                     <Button 

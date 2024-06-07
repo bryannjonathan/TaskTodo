@@ -7,7 +7,6 @@ import "./addTask.css";
 
 const AddTodo = () => {
 
-
     return (
         <div className="add-todo-container">
             <Form action={createTodo} className="form-container">
@@ -15,14 +14,10 @@ const AddTodo = () => {
                     <div className="plus-sign">
                         +
                     </div>
-                    <Input name ="input" type="text" placeholder="Type here to add a task...." className="input-container"/>
+                    <Input name="input" type="text" placeholder="Type here to add a task...." className="input-container" />
                     {/* <Button type="submit" text="Add"/> */}
-                </div> 
-                
-                
-                
+                </div>
             </Form>
-            
         </div>
     );
 };

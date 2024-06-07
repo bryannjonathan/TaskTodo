@@ -14,6 +14,7 @@
 .task-content {
     display: flex;
     align-items: center;
+    /* flex: 1; */
 }
 
 .status-circle {
@@ -26,9 +27,12 @@
     border-radius: 50%;
 }
 
+.status-circle:hover{
+    color: #6783f5
+}
 
 .status-circle.completed{
-    color: rgb(68, 173, 243);
+    color: #6783f5;
 }
 
 
@@ -67,16 +71,5 @@
 
 .edit-button:hover,
 .delete-button:hover {
-    color: #ffa500;
-}
-
-.input-container{
-    background-color: transparent;
-    outline: none;
-    /* opacity: 0; */
-    width: 100%;
-    /* height: 100%; */
-    padding-left: 1rem;
-    padding-right: 1rem;
-    /* background:red; */
+    color: #6783f5;
 }
