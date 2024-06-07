@@ -7,8 +7,9 @@ import Button from "../buttons/button";
 import { MdEdit } from "react-icons/md";
 import Input from "../input/input";
 import Form from "../form/form";
+import { taskProps } from "@/types";
 
-const EditTodo = () => {
+const EditTodo = ({task} : {task : taskProps}) => {
 
     const [editState, setEditState] = useState(false)
 
@@ -19,7 +20,12 @@ const EditTodo = () => {
     return(
         <div className="flex gap-5 items-center">
             <Button onClick={handleEdit} text={<MdEdit />}/>
-            {editState ? (<Form><Input /></Form>) : null}
+            {editState ? (
+                <Form action={EditTodo}>
+                    <Input name="indputId" value={task.id} type="hidden"/>
+                    <Button type="submit" text="save" />
+                </Form>
+            ) : null}
         </div>
     )
 }

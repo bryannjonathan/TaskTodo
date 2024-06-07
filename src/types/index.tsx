@@ -5,6 +5,7 @@ export interface inputProps{
     type: string;
     placeholder?: string;
     value?: string
+    className?: string
 }
 
 export interface formProps {
@@ -20,11 +21,14 @@ export interface buttonProps{
     onClick?: () => void;
     actionButton?: boolean;
     bgColor?: string;
+    className?: string
 }
 
 export interface taskProps{
     id: string;
     title: string;
     isCompleted: boolean;
+    dueDate: string;
+    desc: string;
     createdAt?: Date;
 }

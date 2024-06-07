@@ -17,6 +17,7 @@ const Form = ({ children, action, className, onSubmit }: formProps ) => {
             }} 
             onSubmit={onSubmit} 
             ref={ref}
+            className={className}
         >
             {children}
         </form>

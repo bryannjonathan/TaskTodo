@@ -17,6 +17,7 @@ datasource db {
 model Task{
   id          String @id @default(uuid()) @map("_id")
   title       String
+  desc        String?
   isCompleted Boolean @default(false)
   dueDate     String?
   createdAt   DateTime @default(now())

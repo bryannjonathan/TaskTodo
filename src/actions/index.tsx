@@ -2,13 +2,15 @@
 
 import prisma from "@/utils/prisma";
 import { revalidatePath } from "next/cache";
+import { NextResponse } from "next/server";
 
 export async function createTodo(formData: FormData){
     const input = formData.get('input') as string;
+    console.log(input);
 
-    if(!input.trim()){
-        return;
-    } 
+    // if(!input.trim()){
+    //     return;
+    // } 
 
     await prisma.task.create({
         data:{
@@ -42,21 +44,22 @@ export async function changeStatus(formData: FormData){
     revalidatePath("/")
 }
 
-export async function editTodo(formData: FormData){
+export async function editTodo(formData: FormData) {
     const newTitle = formData.get("newTitle") as string;
-    const inputId = formData.get("newInputId") as string;
-
+    const inputId = formData.get("inputId") as string;
+    console.log("For inputId: ", inputId, " New title: ", newTitle)
+  
     await prisma.task.update({
-        where:{
-            id: inputId,
-        },
-        data:{
-            title: newTitle,
-        }
-    })
-
-    revalidatePath("/")
-}
+      where: {
+        id: inputId,
+      },
+      data: {
+        title: newTitle,
+      },
+    });
+  
+    revalidatePath("/");
+  }
 
 
 export async function deleteTodo(formData: FormData){
