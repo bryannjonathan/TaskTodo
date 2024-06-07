@@ -33,10 +33,6 @@ async function getData(userId: string){
   return data
 }
 
-
-
-
-
 export default async function Home() {
 
   const { userId } = auth();
@@ -54,7 +50,7 @@ export default async function Home() {
         <h1>All tasks</h1>
       </div>
       {data.map((task:any, id: any) => (
-        <TaskCard task={task}/>
+        <TaskCard key={task.id} task={task}/>
       ))}
     </div>
       
