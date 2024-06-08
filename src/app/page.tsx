@@ -56,7 +56,6 @@ export default async function Home() {
       ) : (
         <p>No Tasks Available</p>
       )}
-      {/* {process.env.DATABASE_URL} */}
     </div>
       
   );
