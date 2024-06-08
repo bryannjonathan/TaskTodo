@@ -1,8 +1,5 @@
-// import AddTodo from "@/components/api/addTodo";
 import prisma from "@/utils/prisma";
-import { taskProps } from "@/types";
 import TaskCard from "@/components/tasks/taskCard";
-import AddTodo from "@/components/tasks/addTask";
 import "./completed.css";
 import { auth } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
@@ -31,10 +28,6 @@ async function getData(userId: string){
 
   return data
 }
-
-
-
-
 
 export default async function Home() {
     

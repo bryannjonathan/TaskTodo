@@ -6,31 +6,33 @@ import AddTodo from "@/components/tasks/addTask";
 import { auth } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 
-async function getData(userId: string){
-
-  const data = await prisma.task.findMany({
-    select: {
-      title: true,
-      id: true,
-      isCompleted: true,
-    },
-    
-    where:{
-      userId: userId
-    },
-
-    orderBy: [
-      {
-        isCompleted: "asc",
+async function getData(userId: string) {
+  try {
+    const data = await prisma.task.findMany({
+      select: {
+        title: true,
+        id: true,
+        isCompleted: true,
       },
-      {
-        createdAt: "desc",
-      }
-    ]
+      where: {
+        userId: userId,
+      },
+      orderBy: [
+        {
+          isCompleted: "asc",
+        },
+        {
+          createdAt: "desc",
+        },
+      ],
+    });
 
-  })
+    return data;
 
-  return data
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return null;
+  }
 }
 
 export default async function Home() {
@@ -41,7 +43,7 @@ export default async function Home() {
             msg: "Unauthorized user access",
         })
     }
-  const data = await getData(userId);
+  // const data = await getData(userId);
 
   return (
     <div className="content-container">
@@ -49,9 +51,12 @@ export default async function Home() {
       <div className="header-title">
         <h1>All tasks</h1>
       </div>
-      {data.map((task:any, id: any) => (
-        <TaskCard key={task.id} task={task}/>
-      ))}
+      {/* {data && data.length > 0 ? (
+        data.map((task: any) => <TaskCard key={task.id} task={task} />)
+      ) : (
+        <p>No Tasks Available</p>
+      )} */}
+      {process.env.DATABASE_URL}
     </div>
       
   );
