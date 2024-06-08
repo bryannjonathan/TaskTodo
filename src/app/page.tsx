@@ -43,7 +43,7 @@ export default async function Home() {
             msg: "Unauthorized user access",
         })
     }
-  // const data = await getData(userId);
+  const data = await getData(userId);
 
   return (
     <div className="content-container">
@@ -51,12 +51,12 @@ export default async function Home() {
       <div className="header-title">
         <h1>All tasks</h1>
       </div>
-      {/* {data && data.length > 0 ? (
+      {data && data.length > 0 ? (
         data.map((task: any) => <TaskCard key={task.id} task={task} />)
       ) : (
         <p>No Tasks Available</p>
-      )} */}
-      {process.env.DATABASE_URL}
+      )}
+      {/* {process.env.DATABASE_URL} */}
     </div>
       
   );
