@@ -1,20 +1,44 @@
-# Todo App
+# TaskTodo - A Simple Task Management App 📝
 
-A simple to-do application built with Next.js, Prisma, and Clerk
+**TaskTodo** is an easy-to-use task management app designed to help you stay on top of your tasks and organize your daily workload. 
 
-## Features
-- User authentication with Clerk
-- CRUD (Create, Read, Update, and Delete) operations for tasks
-- Real-time updates with Prisma
+**Live Demo**: [TaskTodo](https://task-todo-woad.vercel.app/) 🚀
 
-## Installation
-1. Clone the repository:
+## Features 🌟
+- **User authentication**: Sign up and log in to your account for secure authentication
+- **Create and manage tasks**: Add, edit, and delete tasks easily
+- **Mark tasks as completed**: Track your progress by marking tasks as completed when done
+- **Completed Task View**: A dedicated tab to view all completed tasks seperately
+- **User-friend interface**: Intuitiuve and simple design with smooth navigation
+
+### Screenshots
+![image](https://github.com/user-attachments/assets/0927fff9-bccd-45b0-a19b-3e3d8f2a5581)
+
+## Technologies Used ⚙️
+- **Frontend**: Next.js, React.js, CSS
+- **Authentication**: Clerk
+- **Database**: MongoDB (with Primsa ORM)
+- **Deployment**: Vercel
+- **Others**: Typescript, react-icons
+
+## Installation 🔧
+
+Follow these steps to run the app locally:
+
+### Prerequisites:
+- Node.js (version >= 14)
+- npm (version >= 6)
+- A **Clerk** account for authentication
+- MongoDB instance
+
+### Steps:
+1. Clone this repository:
     ```bash
-    git clone https://github.com/your-username/todo-app.git
+    git clone https://github.com/bryannjonathan/TaskTodo.git
     ```
 2. Navigate to the project directory:
     ```bash
-    cd todo-app
+    cd tasktodo
     ```
 3. Install dependencies:
     ```bash
@@ -35,20 +59,20 @@ A simple to-do application built with Next.js, Prisma, and Clerk
    prisma generate
    npm run dev
    ```
+   The app will run on `http://localhost:3000`
 
-## Usage
-To use the application, sign up or log in using the provided authentication. The add, edit, complete, or delete tasks.
+   When you visit the app, you'll be prompted to sign up or login via **Clerk** to access the full functionality of the task manager. After logging in, you can start adding and managing tasks.
 
-## Deployment
-The project is deployed on Vercel. The steps are:
+## Deployment 🚀
+The project is deployed on Vercel. Follow these steps to deploy the app:
 1. Push the code to GitHub
-2. Create a new project in Vercel
+2. Create a new project in **Vercel**
 3. Select the GitHub repository and configure the project
 4. Include necessary environment variables
 5. Deploy the project
 
-## Acknowledgements
-- [React Icons](https://www.npmjs.com/package/react-icons) for some icons used
+## Acknowledgements  🙏
+- [React Icons](https://www.npmjs.com/package/react-icons) for icons used
 - [Clerk](https://clerk.dev) for the authentication service
 - [Prisma](https://www.prisma.io) for the ORM
 - [Vercel](https://vercel.com) for the deployment platform
